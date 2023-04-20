@@ -94,7 +94,7 @@ export default function Orderconfirm(props) {
                                     name="radio-buttons-group"
                                 >
                                     <FormControlLabel value="cod" control={<Radio onChange={() => setSelectedValue(true)} />} label="Cash on Delivery" />
-                                    <FormControlLabel value="other" control={<Radio onChange={() => setSelectedValue(false)} />} label="Other Payment" />
+                                    {/* <FormControlLabel value="other" control={<Radio onChange={() => setSelectedValue(false)} />} label="Other Payment - Unavailable" /> */}
                                 </RadioGroup>
                                 <TextField
                                     autoFocus

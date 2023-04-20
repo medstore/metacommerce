@@ -41,7 +41,7 @@ export default function AdminOrders() {
     }
 
     useEffect(() => {
-        if (user && user.role != "admin") {
+        if (localStorage.getItem("userAuthToken")==null || user && user.role != "admin") {
             navigate(`/`)
         }else{
             getAdminOrders()

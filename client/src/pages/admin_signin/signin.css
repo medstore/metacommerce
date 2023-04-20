@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: center;
     height: calc(100vh - 60px);
-    overflow-y: scroll;
+    overflow-y: hidden;
+    background-color: #00000080;
 }
 
 .signinWrapper{

@@ -60,7 +60,7 @@ export default function UserOrders() {
                                     <span>Status</span>
                                     <p className={`${props.value.status === "Delivered" ? "markGreen" : null}`}>{props.value.status === "Delivered" ? "Order Delivered ✔️" : props.value.status}</p>
                                 </div>
-                                
+
                                 {
                                     props.value.status == "Delivered" ?
                                         <ReviewProduct signal={true} order_id={props.value._id} product_name={props.value.productName} review={props.value.review} />
@@ -93,35 +93,32 @@ export default function UserOrders() {
         <div className="ordersPage">
             {
                 orders ? <>
-                    {
-                        isLoading ? <CircularProgress /> :
-
-                            <div className="cartDiv">
-                                <div id="closeBtn">
-                                    <button>
-                                        X
-                                    </button>
-                                </div>
-                                <div className="userOrderDiv">
-                                    {
-                                        orders.length > 0 ?
-                                            <>
-                                                <div className="userDashRightTop">
-                                                    <h2>My Orders</h2>
-                                                </div>
-                                                {
-                                                    orders.map((item, key) => {
-                                                        return (
-                                                            <OrderCard key={key} value={item} />
-                                                        )
-                                                    })
-                                                }
-                                            </>
-                                            : <h2>Oops! No order found</h2>
-                                    }
-                                </div>
-                            </div>
-                    }
+                    <div className="cartDiv">
+                        <div id="closeBtn">
+                            <button>
+                                X
+                            </button>
+                        </div>
+                        <div className="userOrderDiv">
+                            {
+                                isLoading ? <CircularProgress /> :
+                                    orders.length > 0 ?
+                                        <>
+                                            <div className="userDashRightTop">
+                                                <h2>My Orders</h2>
+                                            </div>
+                                            {
+                                                orders.map((item, key) => {
+                                                    return (
+                                                        <OrderCard key={key} value={item} />
+                                                    )
+                                                })
+                                            }
+                                        </>
+                                        : <h2>Oops! No order found</h2>
+                            }
+                        </div>
+                    </div>
                 </> : null
             }
         </div>

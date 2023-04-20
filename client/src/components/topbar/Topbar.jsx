@@ -58,7 +58,12 @@ export default function Topbar() {
                                 <div class="menu-content">
                                     {userAuth ?
                                         <>
-                                            <div className="links-hidden" onClick={() => setPage("orders")}>Orders</div>
+                                            <div className="links-hidden" onClick={() => setPage("orders")}>My Orders</div>
+                                            {
+                                                user.role == "admin" && (
+                                                    <div className="links-hidden" onClick={() => navigate("/admin/orders")}>Inventory Panel</div>
+                                                )
+                                            }
                                             <span className="links-hidden" onClick={user_logout}>Logout</span>
                                         </>
                                         :
